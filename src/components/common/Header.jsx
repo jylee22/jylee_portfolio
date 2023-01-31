@@ -6,9 +6,9 @@ const Header = () => {
 
   return(
     <header className="header">
-      <div className="logo">
+      {/* <div className="logo">
         <h1>LEE JI YUN PORTFOLIO</h1>
-      </div>
+      </div> */}
 
       <Menu />
     </header>
