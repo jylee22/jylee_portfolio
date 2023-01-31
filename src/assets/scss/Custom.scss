@@ -4,11 +4,18 @@
   기본 스타일시트 작성
 ------------------------------*/
 
+.page{
+  position: relative;
+}
+
 /*header*/
 .header{
   display: flex;
   flex-direction: row;
   height: 60px;
+  width: 100%;
+  position: absolute;
+  z-index: 99;
   .logo{
     h1{
       padding: $p-0 $p-10;
@@ -19,6 +26,9 @@
   }
   .menu{
     margin-left: $m-auto;
+  }
+  .nav-link{
+    color: $white-color;
   }
 }
 
@@ -49,12 +59,110 @@
 
 /*main*/
 .main-component{
-  height: 600px;
   .main-content{
     height: 100%;
-    background-color: $gray-color;
+    .main{
+      height: 100%;
+      position: relative;
+      img{
+        width: 100%;
+      }
+      .text{
+        position: absolute;
+        top: 50%;
+        left: 20%;
+        transform: translate(-50%, -20%);
+        color: #fff;
+        margin: 0 50px;
+        p{
+          &::before{
+            content: '';
+            border: 1px solid;
+            width: 200px;
+            position: absolute;
+            right: 0px;
+            bottom: 10px;
+          }
+        }
+      }
+    }
   }
 }
+
+.text{
+  h1{
+    color: transparent;
+    white-space: nowrap;
+    &::before{
+      content: "LEE JI YUN PORTFOLIO.";
+      position: absolute;
+      overflow: hidden;
+      border-right: 1px solid $white-color;
+      animation: typing 5s steps(31) infinite;
+      color: $white-color;
+    }
+  }
+}
+
+@keyframes typing{
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
+.scroll{
+  position: absolute;
+  border: 2px solid #fff;
+  width: 42px;
+  height: 56px;
+  border-radius: 20px;
+  bottom: 400px;
+  left: 50%;
+  transition: 1s;
+  animation-name: move;
+  animation-duration: 5s;
+  transform: translateY(0);
+  animation-iteration-count: infinite;
+  &::before{
+    content: '';
+    border: 2px solid #fff;
+    position: absolute;
+    left: 18px;
+    top: 10px;
+    border-radius: 5px;
+    height: 8px;
+  }
+  &::after{
+    content: 'Scroll';
+    position: absolute;
+    bottom: -34px;
+    color: #fff;
+    font-weight: 500;
+    left: -6px;
+    text-align: center;
+    font-size: 18px;
+  }
+}
+
+@keyframes move {
+  0% { 
+    transform: translateY(0px);
+  }
+  50%   { 
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100%   { 
+    transform: translateY(0px);
+  }
+}
+
 
 /*profile*/
 .profile-content{
