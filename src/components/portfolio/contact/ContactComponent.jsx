@@ -6,8 +6,10 @@ const ContentComponent = () => {
     <div className="contact-component">
       <div className="contact-content">
         <div className="contact">
+          <h1>포트폴리오</h1>
           <div>
-            fkfkfk
+            <div>이메일</div>
+            <div>이메일</div>
           </div>
         </div>
       </div>
