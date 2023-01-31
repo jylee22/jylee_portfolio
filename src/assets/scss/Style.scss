@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+/*------------------------------
+  초기화 스타일시트 작성
+------------------------------*/
+
+/*text*/
+h1, h2, h3, h4, h5, h6{
+  margin: 0;
+}
+
+a{
+  text-decoration: none;
+  color: $black-color;
+}
+
+p{
+  margin: $m-0;
+}
+
+label{
+  font-size: 14px;
+  padding: $p-5 $p-15;
+  border: $border-default;
+  background-color: $blue-color;
+  border-radius: $border-radius-10;
+  color: $white-color;
+  margin: $m-0 $m-10;
+}
+
+small{
+  color: $gray-color;
+}
+
+/*ul, li*/
+ul, li{
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+/*scroll*/
+::-webkit-scrollbar{
+  width: 6px;
+  background-color: #f2f2f2;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #bfbfbf;
+  border-radius: 5px;
+  &:hover{
+    background-color: #888;
+  }
+}
+::-webkit-scrollbar-track{
+  border-radius: 5px;
+}

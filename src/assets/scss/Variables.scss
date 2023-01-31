@@ -1,0 +1,210 @@
+@charset "UTF-8";
+
+/*------------------------------
+  스타일 변수
+------------------------------*/
+
+/*color*/
+$black-color: #0D0D0D;
+$black-hover-color: #262626;
+$white-color: #FFFFFF;
+$white-hover-color: #F2F2F2;
+$blue-color : #1E6FD9;
+$blue-hover-color : #1E6FD9;
+$red-color : #F26666;
+$red-hover-color : #E15C5C;
+$green-color : #45C4B0;
+$green-hover-color : #38AA98;
+$gray-color : #727D8E;
+$gray-hover-color : #5B6779;
+$yellow-color : #FEDA03;
+$yellow-hover-color : #E3C305;
+$disabled-color: #BFBFBF;
+$bg-color: #EFF2F3;
+
+/*border*/
+$border-0: 0px;
+$border: 1px solid #d1d1d2;
+$border-focus: 1px solid $gray-color;
+$border-default: 1px solid $blue-color;
+$border-default-focus: 1px solid $blue-hover-color;
+$border-trans: transparent;
+$border-default-dashed: 1px dashed $blue-color;
+
+$border-radius-0: 0px;
+$border-radius-5: 5px;
+$border-radius-10: 10px;
+$border-radius-15: 15px;
+$border-radius-20: 20px;
+$border-radius-25: 25px;
+$border-radius-30: 30px;
+
+/*margin*/
+$m-auto : auto;
+$m-0 : 0px;
+$m-5 : 5px;
+$m-10 : 10px;
+$m-15 : 15px;
+$m-20 : 20px;
+$m-25 : 25px;
+$m-30 : 30px;
+$m-35 : 35px;
+$m-40 : 40px;
+$m-45 : 45px;
+$m-50 : 50px;
+$m-55 : 55px;
+
+/*padding*/
+$p-0 : 0px;
+$p-5 : 5px;
+$p-10 : 10px;
+$p-15 : 15px;
+$p-20 : 20px;
+$p-25 : 25px;
+$p-30 : 30px;
+$p-35 : 35px;
+$p-40 : 40px;
+$p-45 : 45px;
+$p-50 : 50px;
+$p-55 : 55px;
+
+/*text*/
+$font-size-14: 14px; 
+$font-size-15: 15px; 
+$font-size-16: 16px; 
+$font-size-18: 18px; 
+$font-size-20: 20px; 
+$font-size-22: 22px; 
+$font-size-24: 24px; 
+$font-size-26: 26px; 
+$font-size-28: 28px; 
+$font-size-30: 30px; 
+$font-size-32: 32px; 
+$font-size-34: 34px; 
+$font-size-36: 36px; 
+$font-size-38: 38px; 
+$font-size-40: 40px; 
+$font-size-42: 42px; 
+$font-size-44: 44px; 
+$font-size-46: 46px; 
+$font-size-48: 48px; 
+$font-size-50: 50px; 
+
+$font-weight-400: 400;
+$font-weight-500: 500;
+$font-weight-600: 600;
+$font-weight-800: 600;
+
+/*transition*/
+$transition-2: 0.2s;
+$transition-3: 0.3s;
+$transition-4: 0.4s;
+$transition-5: 0.5s;
+
+/*shadow*/
+$box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.2);
+$title-shadow: 5px 5px #9CE0FF;
+$sub-shadow: 5px 5px $yellow-color;
+
+/*------------------------------
+  클래스 정의
+------------------------------*/
+/*width*/
+.w-100{
+  width: 100%;
+}
+.w-auto{
+  width: auto;
+}
+.w-80{
+  width: 80%;
+}
+.w-60{
+  width: 60%;
+}
+.w-50{
+  width: 50%;
+}
+.w-30{
+  width: 30%;
+}
+.w-20{
+  width: 20%;
+}
+.w-10{
+  width: 10%;
+}
+.w-0{
+  width: 0%;
+}
+
+/* flex */
+.flex{
+  display: flex;
+}
+
+.flex-row{
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col{
+  display: flex;
+  flex-direction: column;
+}
+
+/*margin*/
+.m-auto{
+  margin: $m-auto;
+}
+.m-top-auto{
+  margin-bottom: $m-auto;
+}
+.m-right-auto{
+  margin-left: $m-auto;
+}
+.m-bottom-auto{
+  margin-top: $m-auto;
+}
+.m-left-auto{
+  margin-right: $m-auto;
+}
+
+.m-0{
+  margin: $m-0;
+}
+.m-5{
+  margin: $m-5;
+}
+.m-10{
+  margin: $m-10;
+}
+.m-15{
+  margin: $m-15;
+}
+.m-20{
+  margin: $m-20;
+}
+.m-25{
+  margin: $m-25;
+}
+.m-30{
+  margin: $m-30;
+}
+.m-35{
+  margin: $m-35;
+}
+.m-40{
+  margin: $m-40;
+}
+.m-45{
+  margin: $m-45;
+}
+.m-50{
+  margin: $m-50;
+}
+.m-55{
+  margin: $m-55;
+}
+
+/*padding*/

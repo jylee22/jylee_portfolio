@@ -1,0 +1,299 @@
+@charset "UTF-8";
+
+/*------------------------------
+  기본 스타일시트 작성
+------------------------------*/
+
+/*header*/
+.header{
+  display: flex;
+  flex-direction: row;
+  height: 60px;
+  .logo{
+    h1{
+      padding: $p-0 $p-10;
+      letter-spacing: -5px;
+      color: #1E6FD9;
+      text-shadow: 5px 5px #91BBF2;
+    }
+  }
+  .menu{
+    margin-left: $m-auto;
+  }
+}
+
+/*menu*/
+.nav{
+  display: flex;
+  flex-direction: row;
+  padding: $p-0 $p-10;
+  .nav-item{
+    padding: $p-10;
+    line-height: 40px;
+    transition: width 0.5s;
+    &:hover{
+      .nav-link{
+        border-bottom: $border-default;
+        border-width: 4px;
+        transition: width 0.5s;
+      }
+    }
+  }
+  .nav-link{
+    display: block;
+    font-size: $font-size-18;
+    font-weight: $font-weight-600;
+    transition: width 0.5s;
+  }
+}
+
+/*main*/
+.main-component{
+  height: 600px;
+  .main-content{
+    height: 100%;
+    background-color: $gray-color;
+  }
+}
+
+/*profile*/
+.profile-content{
+  // padding: $p-20;
+}
+.profile, .certificate, .history{
+  padding: $p-20;
+  width: 60%;
+  margin: auto;
+}
+
+// 프로필
+.profile-item{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: $p-10 $p-0;
+  border-top: $border;
+  border-bottom: $border;
+  .item{
+    display: flex;
+    flex-direction: row;
+    flex: 0 0 50%;
+    .inf{
+      margin: $m-auto $m-0;
+    }
+  }
+  .icon{
+    width: 32px;
+    height: 32px;
+    margin: $m-20;
+  }
+}
+
+// 자격증
+
+.card-item{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  .item{
+    border: $border;
+    border-radius: $border-radius-10;
+    background-color: $white-color;
+    flex: 0 0 calc(50% - 40px);
+    padding: $p-20;
+    display: flex;
+    flex-direction: row;
+    margin: $m-20;
+  }
+  .inf{
+    display: flex;
+    flex-direction: row;
+    font-size: $font-size-14;
+    padding: $p-0 $p-20;
+    width: calc(100% - 52px);
+    span{
+      margin: auto 10px;
+      flex-grow: 1;
+      &:last-child{
+        text-align: right;
+      }
+    }
+  }
+  .icon{
+    width: 32px;
+    height: 32px;
+    margin: $m-10;
+  }
+}
+
+// 기술
+.skills{
+  // background-color: #0388A6;
+  .content-body{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: $p-0;
+    width: 60%;
+    margin: auto;
+  }
+}
+
+.skill-list{
+  background-color: $white-color;
+  box-shadow: $box-shadow;
+  border-radius: $border-radius-10;
+  margin: $m-20;
+  flex-grow: 1;
+  .title{
+    padding: $p-20;
+    text-align: center;
+  }
+}
+
+.skill-item{
+  display: flex; 
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: $p-20;
+  .item{
+    padding: $p-10;
+    margin: $m-auto;
+  }
+  img{
+    max-height: 60px;
+    height: 60px;
+    margin: $m-auto;
+  }
+}
+
+/*history*/
+.history-content{
+  padding: $p-0 $p-20;
+}
+
+.history-item{
+  position: relative;
+  .title{
+    font-weight: $font-weight-600;
+    font-size: $font-size-20;
+    text-align: left;
+    &::before{
+      content: '';
+      border: $border-default;
+      border-width: 6px;
+      position: absolute;
+      border-radius: $border-radius-10;
+      top: 46px;
+      left: 15px;
+    }
+  }
+  .history-sub-item{
+    padding: $p-20;
+    border-left: $border-default-dashed;
+    margin: $m-20 $m-0 $m-20 $m-20;
+  }
+  .item{
+    padding: $p-20;
+    // background-color: #C4E1F2;
+    border-radius: $border-radius-10;
+    margin-bottom: 20px;
+    p{
+      margin-bottom: $m-5;
+    }
+    label{
+      border-radius: 20px;
+      border: $border-default;
+      color: $blue-color;
+      background-color: #fff;
+      padding: $p-5 $p-20;
+      display: inline-block;
+      font-size: $font-size-14;
+      margin: $m-0;
+    }
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+}
+
+/*project*/
+.project{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: auto;
+  .tab-menu{
+    margin: auto;
+  }
+}
+
+.tab-menu{
+  display: flex;
+  flex-direction: row;
+  padding: 20px 0;
+  .item{
+    padding: $p-5 $p-20;
+    border: $border-default;
+    border-radius: $border-radius-20;
+    color: $blue-color;
+    font-size: $font-size-14;
+    transition: 0.3s;
+    margin: $m-10;
+    &.active{
+      background-color: $blue-color;
+      color: $white-color;
+    }
+    &:hover{
+      background-color: $blue-hover-color;
+      color: $white-color;
+      cursor: pointer;
+    }
+  }
+}
+
+.project-item{
+  .item{
+    display: flex;
+    flex-direction: row;
+    margin: 60px 0;
+    padding: 20px;
+    background-color:#fff;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.2);
+  }
+  .item-img{
+    width: 400px;
+    height: 320px;
+    flex: 0 0 400px;
+    background-color: #999;
+  }
+  .item-inf{
+    width: 100%;
+    padding: 20px;
+    p{
+      font-weight: 600;
+    }
+  }
+}
+
+// contact
+.contact-component{
+  background-color: $gray-color;
+  display: flex;
+  flex-direction: column;
+  .contact-content{
+    padding: $p-40;
+  }
+}
+
+
+.contact{
+  
+}
+
+.footer{
+  text-align: center;
+  background-color: $bg-color;
+  padding: $p-20;
+}
