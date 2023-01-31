@@ -31,12 +31,12 @@ html, body{
     font-family: 'Black Han';
     color: $blue-color;
     font-size: 50px;
-    text-shadow: $title-shadow;
+    // text-shadow: $title-shadow;
   }
   &.sub{
     .title{
       font-size: 40px !important;
-      text-shadow: $sub-shadow;
+      // text-shadow: $sub-shadow;
     }
   }
 }

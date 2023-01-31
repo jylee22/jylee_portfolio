@@ -59,6 +59,11 @@
 /*profile*/
 .profile-content{
   // padding: $p-20;
+  .profile{
+    .content-body{
+      padding: $p-0 $p-20;
+    }
+  }
 }
 .profile, .certificate, .history{
   padding: $p-20;
@@ -110,6 +115,7 @@
     flex-direction: row;
     font-size: $font-size-14;
     padding: $p-0 $p-20;
+    padding-left: $p-0;
     width: calc(100% - 52px);
     span{
       margin: auto 10px;
@@ -218,6 +224,19 @@
 }
 
 /*project*/
+.project-component{
+  background-color: $gray-color;
+}
+.project-content{
+  .content-header{
+    .title{
+      color: $white-color;
+    }
+  }
+  .content-body{
+    padding: $p-20;
+  }
+}
 .project{
   display: flex;
   flex-direction: column;
@@ -250,6 +269,23 @@
       cursor: pointer;
     }
   }
+  &.white{
+    .item{
+      border-color: $white-color;
+      color: $white-color;
+      &.active{
+        border-color: $blue-color;
+      }
+      &:hover{
+        border-color: $blue-color;
+        box-shadow: $box-shadow;
+      }
+    }
+  }
+}
+
+.tab-content{
+  padding: $p-0 $p-20;
 }
 
 .project-item{
@@ -296,4 +332,22 @@
   text-align: center;
   background-color: $bg-color;
   padding: $p-20;
+}
+
+/*효과*/
+.skill-list{
+  transition: 0.5s;
+  transform: translateY(0px);
+  &:hover{
+    transform: translateY(10px);
+  }
+}
+
+.project-item{
+  .item{
+    transition: 0.5s;
+    &:hover{
+      transform: scale( 1.05, 1.05);
+    }
+  }
 }

@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+/*------------------------------
+  반응형 스타일시트 작성
+------------------------------*/
+
+@media all and (max-width: 1599px){
+  .profile, .certificate, .history, .project{
+    width: 80%;
+  }
+  .skills{
+    .content-body{
+      width: 80%;
+    }
+  }
+}
+
+@media all and (max-width: 1299px){
+  .profile-content{
+    padding: 0 20px;
+  }
+  .profile, .certificate, .history, .project{
+    width: 100%;
+  }
+  .skills{
+    .content-body{
+      width: 100%;
+    }
+  }
+}
