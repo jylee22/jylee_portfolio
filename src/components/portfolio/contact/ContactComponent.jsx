@@ -6,10 +6,21 @@ const ContentComponent = () => {
     <div className="contact-component">
       <div className="contact-content">
         <div className="contact">
-          <h1>포트폴리오</h1>
-          <div>
-            <div>이메일</div>
-            <div>이메일</div>
+          <div className="content-header">
+            <h1 className="title">FINALLY</h1>
+          </div>
+          <div className="content-body">
+            <p>부족한 저의 포트폴리오를 봐주셔서 감사합니다. <br/>저에대해 궁금한 점이 있으시다면 메일 부탁드립니다.</p>
+            <div className="item">
+              <span>
+                <small>이름</small>
+                <p>이지윤</p>
+              </span>
+              <span>
+                <small>이메일</small>
+                <p>jylee22.96@gmail.com</p>
+              </span>
+            </div>
           </div>
         </div>
       </div>
