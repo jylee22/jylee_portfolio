@@ -59,114 +59,60 @@
 
 /*main*/
 .main-component{
+  height: 1040px;
+  position: relative;
   .main-content{
     height: 100%;
+    overflow: hidden;
     .main{
       height: 100%;
       position: relative;
-      img{
-        width: 100%;
-      }
-      .text{
-        position: absolute;
-        top: 50%;
-        left: 20%;
-        transform: translate(-50%, -20%);
-        color: #fff;
-        margin: 0 50px;
-        p{
-          &::before{
-            content: '';
-            border: 1px solid;
-            width: 200px;
-            position: absolute;
-            right: 0px;
-            bottom: 10px;
-          }
+      background-color: rgba(0,0,0,0.2);
+      width: 100%;
+      background-size: cover;
+      z-index: 2;
+    }
+    .text{
+      position: absolute;
+      z-index: 2;
+      left: 20%;
+      top: 40%;
+      transform: translate(-20%, -40%);
+      padding: 20px;
+      color: #fff;
+      p{
+        &::before{
+          content: '';
+          border: 1px solid;
+          width: 200px;
+          position: absolute;
+          right: 28px;
+          bottom: 30px;
         }
       }
     }
-  }
-}
-
-.text{
-  h1{
-    color: transparent;
-    white-space: nowrap;
-    &::before{
-      content: "LEE JI YUN PORTFOLIO.";
-      position: absolute;
-      overflow: hidden;
-      border-right: 1px solid $white-color;
-      animation: typing 5s steps(31) infinite;
-      color: $white-color;
+    .bg{
+      background-image: url('../images/bg/main_bg_2.jpg');
+      height: 100%;
+      width: 100%;
+      background-size: cover;
+      background-position: center center;
+      position: fixed;
+      top: 0;
     }
   }
 }
 
-@keyframes typing{
-  0% {
-    width: 0%;
-  }
-  50% {
-    width: 100%;
-  }
-  100% {
-    width: 0%;
-  }
+/*all*/
+.profile-component, .history-component, .project-component, .contact-component{
+  position: relative;
+  z-index: 3;
 }
-
-.scroll{
-  position: absolute;
-  border: 2px solid #fff;
-  width: 42px;
-  height: 56px;
-  border-radius: 20px;
-  bottom: 400px;
-  left: 50%;
-  transition: 1s;
-  animation-name: move;
-  animation-duration: 5s;
-  transform: translateY(0);
-  animation-iteration-count: infinite;
-  &::before{
-    content: '';
-    border: 2px solid #fff;
-    position: absolute;
-    left: 18px;
-    top: 10px;
-    border-radius: 5px;
-    height: 8px;
-  }
-  &::after{
-    content: 'Scroll';
-    position: absolute;
-    bottom: -34px;
-    color: #fff;
-    font-weight: 500;
-    left: -6px;
-    text-align: center;
-    font-size: 18px;
-  }
-}
-
-@keyframes move {
-  0% { 
-    transform: translateY(0px);
-  }
-  50%   { 
-    transform: translateY(100px);
-    opacity: 0;
-  }
-  100%   { 
-    transform: translateY(0px);
-  }
-}
-
 
 /*profile*/
 .profile-content{
-  // padding: $p-20;
+  background-color: $bg-color;
+  padding: 100px $p-0;
   .profile{
     .content-body{
       padding: $p-0 $p-20;
@@ -203,11 +149,16 @@
 }
 
 // 자격증
+.certificate{
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
 
 .card-item{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  transition: .5s;
   .item{
     border: $border;
     border-radius: $border-radius-10;
@@ -282,8 +233,16 @@
 }
 
 /*history*/
+.history-component{
+  background-color: #2C3740;
+}
 .history-content{
-  padding: $p-0 $p-20;
+  padding: 100px $p-20;
+  .content-header{
+    .title{
+      color: $yellow-color;
+    }
+  }
 }
 
 .history-item{
@@ -292,10 +251,12 @@
     font-weight: $font-weight-600;
     font-size: $font-size-20;
     text-align: left;
+    color: $yellow-color;
     &::before{
       content: '';
-      border: $border-default;
+      border: $border;
       border-width: 6px;
+      border-color: $yellow-color;
       position: absolute;
       border-radius: $border-radius-10;
       top: 46px;
@@ -305,6 +266,7 @@
   .history-sub-item{
     padding: $p-20;
     border-left: $border-default-dashed;
+    border-color: $yellow-color;
     margin: $m-20 $m-0 $m-20 $m-20;
   }
   .item{
@@ -314,12 +276,14 @@
     margin-bottom: 20px;
     p{
       margin-bottom: $m-5;
+      color: $white-color;
     }
     label{
       border-radius: 20px;
-      border: $border-default;
-      color: $blue-color;
-      background-color: #fff;
+      border: $border;
+      border-color: $yellow-color;
+      color: $yellow-color;
+      background-color: transparent;
       padding: $p-5 $p-20;
       display: inline-block;
       font-size: $font-size-14;
@@ -333,14 +297,11 @@
 
 /*project*/
 .project-component{
-  background-color: $gray-color;
+  background-color: $bg-color;
+  height: 1282px;
 }
 .project-content{
-  .content-header{
-    .title{
-      color: $white-color;
-    }
-  }
+  padding: 100px $p-0;
   .content-body{
     padding: $p-20;
   }
@@ -352,6 +313,9 @@
   margin: auto;
   .tab-menu{
     margin: auto;
+  }
+  .tab{
+    transition: .5s;
   }
 }
 
@@ -374,6 +338,7 @@
     &:hover{
       background-color: $blue-hover-color;
       color: $white-color;
+      box-shadow: $box-shadow;
       cursor: pointer;
     }
   }
@@ -397,26 +362,32 @@
 }
 
 .project-item{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   .item{
-    display: flex;
-    flex-direction: row;
-    margin: 60px 0;
-    padding: 20px;
-    background-color:#fff;
-    border-radius: 10px;
-    box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.2);
+    background-color: $white-color;
+    flex: 0 0 calc(33.3% - 40px);
+    margin: $m-20;
+    padding: $p-20;
+    border-radius: $border-radius-10;
+    box-shadow: $box-shadow;
+    cursor: pointer;
   }
   .item-img{
-    width: 400px;
-    height: 320px;
-    flex: 0 0 400px;
-    background-color: #999;
+    width: 100%;
+    height: 300px;
+    background-color: #1E6FD9;
   }
   .item-inf{
-    width: 100%;
-    padding: 20px;
+    font-size: $font-size-14;
+    text-align: center;
+    font-weight: $font-weight-600;
+    padding-top: $p-10;
+    height: calc(100% - 300px);
+    display: flex;
     p{
-      font-weight: 600;
+      margin: auto;
     }
   }
 }
@@ -427,13 +398,31 @@
   display: flex;
   flex-direction: column;
   .contact-content{
-    padding: $p-40;
+    padding: 100px $p-40;
+    background-color: $yellow-color;
   }
 }
 
-
 .contact{
-  
+  width: 80%;
+  margin: auto;
+  .content-body{
+    > p{
+      line-height: 1.4;
+      padding: $p-20;
+      text-align: center;
+    }
+  }
+  .item{
+    background-color: $white-color;
+    border-radius: $border-radius-10;
+    padding: $p-20;
+    box-shadow: $box-shadow;
+    display: flex;
+    span{
+      flex-grow: 1;
+    }
+  }
 }
 
 .footer{
@@ -443,6 +432,85 @@
 }
 
 /*효과*/
+
+// main text
+.text{
+  h1{
+    color: transparent;
+    white-space: nowrap;
+    &::before{
+      content: "LEE JI YUN PORTFOLIO.";
+      position: absolute;
+      overflow: hidden;
+      border-right: 1px solid $white-color;
+      animation: typing 5s steps(31) infinite;
+      color: $white-color;
+    }
+  }
+}
+
+@keyframes typing{
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
+// scroll
+.scroll{
+  position: absolute;
+  border: 2px solid #fff;
+  width: 38px;
+  height: 56px;
+  border-radius: 20px;
+  bottom: 100px;
+  left: 50%;
+  transition: 1s;
+  animation-name: move;
+  animation-duration: 5s;
+  transform: translateY(0);
+  animation-iteration-count: infinite;
+  z-index: 2;
+  &::before{
+    content: '';
+    border: 2px solid #fff;
+    position: absolute;
+    left: 16px;
+    top: 10px;
+    border-radius: 5px;
+    height: 8px;
+  }
+  &::after{
+    content: 'Scroll';
+    position: absolute;
+    bottom: -34px;
+    color: #fff;
+    font-weight: 500;
+    left: -6px;
+    text-align: center;
+    font-size: 18px;
+  }
+}
+
+@keyframes move {
+  0% { 
+    transform: translateY(0px);
+  }
+  50%   { 
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100%   { 
+    transform: translateY(0px);
+  }
+}
+
+// 스킬 카드
 .skill-list{
   transition: 0.5s;
   transform: translateY(0px);
@@ -451,11 +519,58 @@
   }
 }
 
+// 프로젝트 카드
 .project-item{
   .item{
     transition: 0.5s;
     &:hover{
       transform: scale( 1.05, 1.05);
+    }
+  }
+}
+
+// contact
+.contact{
+  .item{
+    &:hover{
+      animation-name: shake;
+      transition: .5s;
+      animation-duration: .5s;
+      animation-iteration-count: 2;
+    }
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  50%{
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+
+/*modal*/
+#projectDetail{
+  .project-item{
+    .item-img{
+      width: 50%;
+      height: 500px;
+    }
+    .item-inf{
+      flex-direction: column;
+      text-align: left;
+      small{
+        font-size: $font-size-16;
+        font-weight: $font-weight-400;
+      }
+      p{
+        font-size: $font-size-20;
+      }
     }
   }
 }

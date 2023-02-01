@@ -54,3 +54,46 @@ ul, li{
 ::-webkit-scrollbar-track{
   border-radius: 5px;
 }
+
+/*modal*/
+.modal{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: .5s;
+  padding: 60px;
+  .modal-content{
+    width: calc(100% - 120px);
+    height: 800px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: $box-shadow;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: .5s;
+  }
+  .modal-header, .modal-body{
+    padding: 20px;
+  }
+  .modal-header{
+    display: flex;
+    .btn-close{
+      margin-left: auto;
+      cursor: pointer;
+      opacity: 0.5;
+      transition: .5s;
+      &:hover{
+        opacity: 1;
+      }
+      .icon{
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
+}
