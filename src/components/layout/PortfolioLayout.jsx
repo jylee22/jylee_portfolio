@@ -8,7 +8,7 @@ const PortfolioLayout = () => {
 
   return(
     <main className="components">
-      <div class="contents">
+      <div className="contents">
 
         <PortfolioComponent />
 
