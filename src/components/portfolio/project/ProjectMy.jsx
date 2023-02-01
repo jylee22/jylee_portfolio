@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const ProjectAcademy = ({academy, showModal}) => {
+const ProjectMy = ({my, showModal}) => {
 
   return(
     <div className='tab-content'>
-      <div className="project-item">
-      {
-          academy.map(p => 
+      <ul className="project-item">
+        {
+          my.map(p => 
             <li 
               key={p.index} 
               className="item"
@@ -19,9 +19,9 @@ const ProjectAcademy = ({academy, showModal}) => {
             </li>
           )
         }
-      </div>
+      </ul>
     </div>
   );
 }
 
-export default ProjectAcademy;
+export default ProjectMy;

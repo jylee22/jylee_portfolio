@@ -1,61 +1,45 @@
 import React, { useState } from 'react';
+// data
+import ProjectData from '../../../assets/json/projectCompanyData.json';
 import ProjectDetailModal from './modal/ProjectDetailModal';
-import Project from './Project';
+// component
 import ProjectAcademy from './ProjectAcademy';
 import ProjectCompany from './ProjectCompany';
+import ProjectMy from './ProjectMy';
+
 
 const ProjectComponent = () => {
+  const company = ProjectData.company;
+  const academy = ProjectData.academy;
+  const my = ProjectData.my;
+
   const [tab, setTab] = useState(0);
 
-  const [detail, setDetail] = useState(false);
-  const showModal = () => setDetail(true);
-  const hideModal = () => setDetail(false);
+  const [modal, setModal] = useState(false);
+  const showModal = () => setModal(true);
+  const hideModal = () => setModal(false);
 
   const tabMenu = [
     {
       id: 0,
       title: "회사",
-      list : <ProjectCompany showModal={showModal}/>
+      list : <ProjectCompany company={company} showModal={showModal} />
     },
     {
       id: 1,
-      title: "직업 훈련",
-      list : <ProjectAcademy />
+      title: "아카데미",
+      list : <ProjectAcademy academy={academy} showModal={showModal} />
     },
     {
       id: 2,
       title: "개인",
-      list : <Project />
+      list : <ProjectMy my={my} showModal={showModal} />
     }
   ]
+  
+  const [detail, setDetail] = useState(0);
 
-  const projectData = [
-    {
-      id: 0,
-      title : "부산광역시 권역별 건강정보통계 분석 시스템",
-      img : "이미지"
-    },
-    {
-      id: 1,
-      title : "선박 원격 통합 모니터링 시스템",
-      img : "이미지"
-    },
-    {
-      id: 2,
-      title : "센트랄 프로세스 마이닝 시스템",
-      img : "이미지"
-    },
-    {
-      id: 3,
-      title : "지능형 IoT 항만 터미널 시스템",
-      img : "이미지"
-    },
-    {
-      id: 4,
-      title : "IOChord Process Re-Engineering (IPR)",
-      img : "이미지"
-    }
-  ]
+  console.log();
 
   return(
     <div className="project-component">
@@ -75,8 +59,7 @@ const ProjectComponent = () => {
                 )
               }
             </ul>
-            
-            {/* content */}
+
             {
               tabMenu.filter(tc => tab === tc.id).map(t => 
                 <div 
@@ -85,16 +68,17 @@ const ProjectComponent = () => {
                 >{t.list}</div>
               )
             }
-            {/* content */}
           </div>
         </div>
       </div>
 
       {
-        detail && 
+        modal &&
         <ProjectDetailModal
           hideModal={hideModal}
-          projectData={projectData}
+          company={company}
+          academy={academy}
+          my={my}
         />
       }
       
