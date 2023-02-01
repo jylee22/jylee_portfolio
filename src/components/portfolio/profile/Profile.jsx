@@ -47,7 +47,7 @@ const Profile = () => {
           <label># UI/UX디자이너</label>
           <label># 웹퍼블리셔</label>
           <label># 4년현직실무경험</label>
-          <label># Web개발자</label>
+          <label># Web개발자_신입</label>
         </div>
       </div>
     </div>
