@@ -1,45 +1,54 @@
 import React, { useState } from 'react';
-// data
-import ProjectData from '../../../assets/json/projectCompanyData.json';
-import ProjectDetailModal from './modal/ProjectDetailModal';
 // component
 import ProjectAcademy from './ProjectAcademy';
 import ProjectCompany from './ProjectCompany';
 import ProjectMy from './ProjectMy';
 
-
-const ProjectComponent = () => {
-  const company = ProjectData.company;
-  const academy = ProjectData.academy;
-  const my = ProjectData.my;
+const ProjectComponent = ({showModal, ProjectData, company, academy, my}) => {
 
   const [tab, setTab] = useState(0);
-
-  const [modal, setModal] = useState(false);
-  const showModal = () => setModal(true);
-  const hideModal = () => setModal(false);
 
   const tabMenu = [
     {
       id: 0,
       title: "회사",
-      list : <ProjectCompany company={company} showModal={showModal} />
+      list : <ProjectCompany tab={tab} ProjectData={ProjectData} company={company} showModal={showModal} />
     },
     {
       id: 1,
       title: "아카데미",
-      list : <ProjectAcademy academy={academy} showModal={showModal} />
+      list : <ProjectAcademy tab={tab} academy={academy} showModal={showModal} />
     },
     {
       id: 2,
       title: "개인",
-      list : <ProjectMy my={my} showModal={showModal} />
+      list : <ProjectMy tab={tab} my={my} showModal={showModal} />
     }
   ]
-  
-  const [detail, setDetail] = useState(0);
 
-  console.log();
+  const kItems = Object.keys(ProjectData);
+  const vItems = Object.values(ProjectData);
+
+  // key
+  const kList = [];
+  for(const item in kItems){
+    const key = kItems[item];
+    kList.push(key);
+  }
+
+  // value
+  const vList = [];
+  for(const item in vItems){
+    const value = vItems[item];
+    vList.push(value);
+    // console.log(item);
+  }
+  const test = vList[0].map(v => 
+    <div key={v.index}>
+    {v.index}, {v.title}, {v.team}
+    </div>
+  );
+  // console.log(vList[1].map(v => <div key={v.index}>{v.id}</div>));
 
   return(
     <div className="project-component">
@@ -68,20 +77,10 @@ const ProjectComponent = () => {
                 >{t.list}</div>
               )
             }
+
           </div>
         </div>
       </div>
-
-      {
-        modal &&
-        <ProjectDetailModal
-          hideModal={hideModal}
-          company={company}
-          academy={academy}
-          my={my}
-        />
-      }
-      
     </div>
   );
 }

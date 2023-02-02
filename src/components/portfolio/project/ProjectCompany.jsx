@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
-const ProjectCompany = ({company, showModal}) => {
+const ProjectCompany = ({tab, ProjectData, company, showModal}) => {
+  
   return(
     <div className='tab-content'>
       <ul className="project-item">
